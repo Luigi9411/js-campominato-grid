@@ -16,7 +16,7 @@
 .button-color{
     background-color: #E9E9ED;
     color: black;
-    margin: 1.8em 0;
+    margin: 2em 0;
     padding: 0 3em;
 }
 
@@ -35,19 +35,13 @@
 	
 }
 
-.sq {
-    height: 3em;
+.cell {
+	border: 1px solid black;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
-    color: black;
-}
-
-.cell {
-	border: 1px solid black;
-	height: calc(100% / 10);
-	width: calc(100% / 10);
+	
+	color: black;
 }
 
 .cell.active {
@@ -56,4 +50,8 @@
 
 .link-color{
     color: #72409E;
+}
+
+.hidden{
+	display: none;
 }

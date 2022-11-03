@@ -18,20 +18,26 @@
 // Proviamo sempre prima con dei console.log() per capire se stiamo ricevendo i dati giusti.
 // Le validazioni e i controlli possiamo farli anche in un secondo momento.
 
-
+const eleSelectLevel = document.querySelector('#select-level');
 const eleGrid = document.querySelector('.grid');
-const eleButton = document.querySelector('.button-color');
+const eleButtonPlay = document.querySelector('.button-color');
+const eleStartScreen = document.querySelector('.start-screen');
 
+eleButtonPlay.addEventListener('click',function(){
 
-eleButton.addEventListener('click',function(){
-    for (let i = 1; i <= 100; i++) {
-        
-        
-        
-        
+    
+    eleStartScreen.classList.add('hidden');
+    eleGrid.innerHTML= '';
+    
+    const nCells = parseInt(eleSelectLevel.value);
+    const sideSquare= Math.sqrt(nCells); 
+
+    for (let i = 1; i <= nCells; i++) {
         const eleCell = document.createElement('div');
-        eleCell.innerHTML += `<div class="sq">${i}</div>`;
+        eleCell.innerHTML=i;
         eleCell.classList.add('cell');
+        eleCell.style.width= `calc(100% / ${sideSquare})`;
+        eleCell.style.height= `calc(100% / ${sideSquare})`;
         eleGrid.append(eleCell);
     
         eleCell.addEventListener('click', function () {
